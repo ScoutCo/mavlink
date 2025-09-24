@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<mavlink>
+    <include>standard.xml</include>
+    <enums>
+        <enum name="RC_ENABLE_SWITCH_STATUS">
+            <entry name="RC_ENABLE_SWITCH_NOT_CONFIGURED" value="0">
+                <description>RC Enable switch is not configured to be active in the system</description>
+            </entry>
+            <entry name="RC_ENABLE_SWITCH_NOT_ASSERTED" value="1">
+                <description>RC Enable switch is configured, but not asserted</description>
+            </entry>
+            <entry name="RC_ENABLE_SWITCH_ASSERTRED" value="255">
+                <description>RC Enable switch is configured and asserted</description>
+            </entry>
+        </enum>
+    </enums>
+    <messages>
+        <message id="45000" name="RC_ENABLE_SWITCH_STATUS">
+            <description>Status of the R/C Enable switch</description>
+            <field type="uint32_t" name="time_boot_ms" units="ms">Timestamp (time since system boot)</field>
+            <field type="uint8_t" name="status" enum="RC_ENABLE_SWITCH_STATUS"/>
+        </message>
+
+    </messages>
+</mavlink>
