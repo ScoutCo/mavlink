@@ -21,7 +21,7 @@ let
         BRANCH=$(${pkgs.git}/bin/git branch --show-current)
         REMOTE=$(${pkgs.git}/bin/git config --get remote.origin.url)
         TMPDIR=$(mktemp -d)
-        INSTALL_DIR=$TMPDIR/mavlink-$REV
+        INSTALL_DIR=$TMPDIR/mavlink-$REV/mavlink
         DIR=$(pwd)
         ${generator}/bin/generate-mavlink.sh C++11 $INSTALL_DIR "scoutco"
         pushd $TMPDIR
