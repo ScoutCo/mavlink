@@ -19,7 +19,7 @@ let
         DIRTY=$(${pkgs.git}/bin/git diff --quiet && git diff --cached --quiet || echo "-dirty")
         REV=$(${pkgs.git}/bin/git rev-parse HEAD)$DIRTY
         BRANCH=$(${pkgs.git}/bin/git branch --show-current)
-        REMOTE=$(${pkgs.git}/bin/git config --get remote.$BRANCH.url)
+        REMOTE=$(${pkgs.git}/bin/git config --get remote.origin.url)
         TMPDIR=$(mktemp -d)
         INSTALL_DIR=$TMPDIR/mavlink-$REV
         DIR=$(pwd)
